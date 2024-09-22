@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reddit-clone-deployment
+  name: Reddit-clone-deployment
   labels:
-    app: reddit-clone
+    app: kuber-project
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: reddit-clone
+      app: kuber-project
   template:
     metadata:
-      labels:
-        app: reddit-clone
+      labels: 
+        app: kuber-project
+    
     spec:
       containers:
-      - name: reddit-clone
-        image: rohanrustagi18/redditclone
+      - name: result-app
+        image: harshitsahu2311/reddit-clone-app
         ports:
         - containerPort: 3000
